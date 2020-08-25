@@ -1,0 +1,1 @@
+alias dclean='[[ $(docker ps -q) = "" ]] || docker kill $(docker ps -q) && yes | docker system prune -a && [[ $(docker ps -a | wc -l | xargs) == "1" && $(docker images | wc -l | xargs) == "1" ]] && echo "Done"'
